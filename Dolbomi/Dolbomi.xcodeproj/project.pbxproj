@@ -13,9 +13,11 @@
 		479B7FC925FF7284005AA267 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FC725FF7284005AA267 /* Main.storyboard */; };
 		479B7FCB25FF7286005AA267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FCA25FF7286005AA267 /* Assets.xcassets */; };
 		479B7FCE25FF7286005AA267 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */; };
+		9AE4EE204FC01F94079673E4 /* Pods_Dolbomi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A700DBDBE6E0A218B1E871D /* Pods_Dolbomi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A700DBDBE6E0A218B1E871D /* Pods_Dolbomi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dolbomi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		479B7FBE25FF7284005AA267 /* Dolbomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dolbomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479B7FC125FF7284005AA267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479B7FC325FF7284005AA267 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		479B7FCA25FF7286005AA267 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		479B7FCD25FF7286005AA267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		479B7FCF25FF7286005AA267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CE2E09965340D5A0322C0A0 /* Pods-Dolbomi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dolbomi.debug.xcconfig"; path = "Target Support Files/Pods-Dolbomi/Pods-Dolbomi.debug.xcconfig"; sourceTree = "<group>"; };
+		E976A9E2EB2032FED49C7ED2 /* Pods-Dolbomi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dolbomi.release.xcconfig"; path = "Target Support Files/Pods-Dolbomi/Pods-Dolbomi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE4EE204FC01F94079673E4 /* Pods_Dolbomi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				479B7FC025FF7284005AA267 /* Dolbomi */,
 				479B7FBF25FF7284005AA267 /* Products */,
+				9DD387A68029934DA6855D8F /* Pods */,
+				DFB563536B63E5CEF67DA84E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = Dolbomi;
 			sourceTree = "<group>";
 		};
+		9DD387A68029934DA6855D8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CE2E09965340D5A0322C0A0 /* Pods-Dolbomi.debug.xcconfig */,
+				E976A9E2EB2032FED49C7ED2 /* Pods-Dolbomi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DFB563536B63E5CEF67DA84E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A700DBDBE6E0A218B1E871D /* Pods_Dolbomi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 479B7FD225FF7286005AA267 /* Build configuration list for PBXNativeTarget "Dolbomi" */;
 			buildPhases = (
+				D082DEE6FFD404483A6EF3A2 /* [CP] Check Pods Manifest.lock */,
 				479B7FBA25FF7284005AA267 /* Sources */,
 				479B7FBB25FF7284005AA267 /* Frameworks */,
 				479B7FBC25FF7284005AA267 /* Resources */,
+				C59606A86C734CC204EA6CA9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C59606A86C734CC204EA6CA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dolbomi/Pods-Dolbomi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dolbomi/Pods-Dolbomi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dolbomi/Pods-Dolbomi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D082DEE6FFD404483A6EF3A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dolbomi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		479B7FBA25FF7284005AA267 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		479B7FD325FF7286005AA267 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CE2E09965340D5A0322C0A0 /* Pods-Dolbomi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		479B7FD425FF7286005AA267 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E976A9E2EB2032FED49C7ED2 /* Pods-Dolbomi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
