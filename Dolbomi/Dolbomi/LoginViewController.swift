@@ -10,7 +10,8 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     
-    lazy var box = UIView()
+   
+    lazy var logoImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,10 @@ class LoginViewController: UIViewController {
     
     func makeUI() {
         view.backgroundColor = UIColor(named: "DolbomiMainColor")
-        view.addSubview(box)
-        box.backgroundColor = .green
-        box.snp.makeConstraints { con in
+       
+        view.addSubview(logoImageView)
+        logoImageView.image = UIImage(named: "DolbomiLogo")
+        logoImageView.snp.makeConstraints { con in
             con.width.height.equalTo(50)
             con.center.equalTo(self.view)
         }
