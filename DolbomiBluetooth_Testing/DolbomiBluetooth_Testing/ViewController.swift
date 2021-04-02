@@ -49,6 +49,20 @@ class ViewController: UIViewController {
     func discoverDescriptors(peripheral: CBPeripheral, characteristic: CBCharacteristic) {
         peripheral.discoverDescriptors(for: characteristic)
     }
+    
+    func subscribeToNotifications(peripheral: CBPeripheral, characteristic: CBCharacteristic) {
+        peripheral.setNotifyValue(true, for: characteristic)
+    }
+    
+    func readValue(characteristic: CBCharacteristic) {
+        self.connectedPeripherals?.readValue(for: characteristic)
+    }
+    
+    func write(value: Data, characteristic: CBCharacteristic) {
+        self.connectedPeripherals?.writeValue(value, for: characteristic, type: .withResponse)
+    }
+    
+    
 
 
 }
@@ -91,14 +105,12 @@ extension ViewController: CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        print(error as Any)
-        fatalError()
+        fatalError(error.debugDescription)
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         if let error = error {
-            print(error)
-            fatalError()
+            fatalError(error.localizedDescription)
         }
         print("Successfully DisConnected")
     }
@@ -137,6 +149,35 @@ extension ViewController: CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        if let error = error {
+            fatalError(error.localizedDescription)
+        }
+        print("Successfully Subscribe")
+        // 구독 성공 시 할거
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        if let error = error {
+            fatalError(error.localizedDescription)
+        }
+        
+        guard let value = characteristic.value else {
+            return
+        }
+        // value 가지고 할거
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+        if let error = error {
+            fatalError(error.localizedDescription)
+        }
+        print("Successfully wrote")
+    }
+    
+    
+    
+
     
     
     
