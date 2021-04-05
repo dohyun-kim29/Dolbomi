@@ -19,6 +19,33 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
+        
+    }
+    @IBAction func bluetoothScanButton(_ sender: Any) {
+        startScan()
+    }
+    
+    
+    @IBAction func connectButton(_ sender: Any) {
+        var connectPeripheral: CBPeripheral?
+        for i in discoverPeripherals {
+            if i.name == "Buds Pro" {
+                connectPeripheral = i
+            }
+        }
+        connect(peripheral: connectPeripheral!)
+    }
+    
+    
+    @IBAction func printListButton(_ sender: Any) {
+        for i in discoverPeripherals {
+            if i.name != nil {
+                print(i.name!)
+            }
+        }
+    }
+    @IBAction func printCP(_ sender: Any) {
+        print(connectedPeripherals)
     }
     
     func startScan() {
@@ -105,7 +132,8 @@ extension ViewController: CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        fatalError(error.debugDescription)
+        print("fail to Connect")
+        print(error ?? "error")
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
