@@ -61,14 +61,54 @@
 		479B7FC025FF7284005AA267 /* Dolbomi */ = {
 			isa = PBXGroup;
 			children = (
-				479B7FC125FF7284005AA267 /* AppDelegate.swift */,
-				479B7FC325FF7284005AA267 /* SceneDelegate.swift */,
-				479B7FC525FF7284005AA267 /* LoginViewController.swift */,
-				479B7FCA25FF7286005AA267 /* Assets.xcassets */,
-				479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */,
+				47DCDE60261AAF6500802F93 /* Model */,
+				47DCDE5F261AAF5F00802F93 /* ViewModel */,
+				47DCDE5E261AAF5A00802F93 /* View */,
+				47DCDE5D261AAF5400802F93 /* Font */,
+				47DCDE5C261AAF4D00802F93 /* Base */,
 				479B7FCF25FF7286005AA267 /* Info.plist */,
 			);
 			path = Dolbomi;
+			sourceTree = "<group>";
+		};
+		47DCDE5C261AAF4D00802F93 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				479B7FC125FF7284005AA267 /* AppDelegate.swift */,
+				479B7FC325FF7284005AA267 /* SceneDelegate.swift */,
+				479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */,
+				479B7FCA25FF7286005AA267 /* Assets.xcassets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		47DCDE5D261AAF5400802F93 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		47DCDE5E261AAF5A00802F93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				479B7FC525FF7284005AA267 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47DCDE5F261AAF5F00802F93 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47DCDE60261AAF6500802F93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9DD387A68029934DA6855D8F /* Pods */ = {

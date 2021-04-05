@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         view.addSubview(logoImageView)
         logoImageView.image = UIImage(named: "DolbomiLogo")
         logoImageView.snp.makeConstraints { con in
-            con.width.height.equalTo(50)
+            con.width.height.equalTo(400)
             con.center.equalTo(self.view)
         }
     }
