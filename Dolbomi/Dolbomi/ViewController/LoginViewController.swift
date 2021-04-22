@@ -7,8 +7,12 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
     
     let loginLogo: UIImageView = {
         let loginLogo = UIImageView()
@@ -25,6 +29,7 @@ class LoginViewController: UIViewController {
         numTextField.placeholder = "기기번호를 입력해주세요"
         numTextField.font = UIFont(name: "Maplestory OTF Bold", size: 17)
         numTextField.backgroundColor = .white
+        numTextField.textAlignment = .center
         numTextField.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(40)
