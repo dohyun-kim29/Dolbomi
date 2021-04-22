@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		479B7FC225FF7284005AA267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B7FC125FF7284005AA267 /* AppDelegate.swift */; };
 		479B7FC425FF7284005AA267 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B7FC325FF7284005AA267 /* SceneDelegate.swift */; };
-		479B7FC625FF7284005AA267 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B7FC525FF7284005AA267 /* ViewController.swift */; };
-		479B7FC925FF7284005AA267 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FC725FF7284005AA267 /* Main.storyboard */; };
+		479B7FC625FF7284005AA267 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B7FC525FF7284005AA267 /* LoginViewController.swift */; };
 		479B7FCB25FF7286005AA267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FCA25FF7286005AA267 /* Assets.xcassets */; };
 		479B7FCE25FF7286005AA267 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */; };
+		47DCDE63261AB05800802F93 /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */; };
+		47DCDE64261AB05800802F93 /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */; };
 		9AE4EE204FC01F94079673E4 /* Pods_Dolbomi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A700DBDBE6E0A218B1E871D /* Pods_Dolbomi.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +22,12 @@
 		479B7FBE25FF7284005AA267 /* Dolbomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dolbomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		479B7FC125FF7284005AA267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		479B7FC325FF7284005AA267 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		479B7FC525FF7284005AA267 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		479B7FC825FF7284005AA267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		479B7FC525FF7284005AA267 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		479B7FCA25FF7286005AA267 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		479B7FCD25FF7286005AA267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		479B7FCF25FF7286005AA267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Bold.otf"; sourceTree = "<group>"; };
+		47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Light.otf"; sourceTree = "<group>"; };
 		6CE2E09965340D5A0322C0A0 /* Pods-Dolbomi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dolbomi.debug.xcconfig"; path = "Target Support Files/Pods-Dolbomi/Pods-Dolbomi.debug.xcconfig"; sourceTree = "<group>"; };
 		E976A9E2EB2032FED49C7ED2 /* Pods-Dolbomi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dolbomi.release.xcconfig"; path = "Target Support Files/Pods-Dolbomi/Pods-Dolbomi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,15 +65,56 @@
 		479B7FC025FF7284005AA267 /* Dolbomi */ = {
 			isa = PBXGroup;
 			children = (
-				479B7FC125FF7284005AA267 /* AppDelegate.swift */,
-				479B7FC325FF7284005AA267 /* SceneDelegate.swift */,
-				479B7FC525FF7284005AA267 /* ViewController.swift */,
-				479B7FC725FF7284005AA267 /* Main.storyboard */,
-				479B7FCA25FF7286005AA267 /* Assets.xcassets */,
-				479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */,
+				47DCDE60261AAF6500802F93 /* Model */,
+				47DCDE5F261AAF5F00802F93 /* ViewModel */,
+				47DCDE5E261AAF5A00802F93 /* ViewController */,
+				47DCDE5D261AAF5400802F93 /* Font */,
+				47DCDE5C261AAF4D00802F93 /* Base */,
 				479B7FCF25FF7286005AA267 /* Info.plist */,
 			);
 			path = Dolbomi;
+			sourceTree = "<group>";
+		};
+		47DCDE5C261AAF4D00802F93 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				479B7FC125FF7284005AA267 /* AppDelegate.swift */,
+				479B7FC325FF7284005AA267 /* SceneDelegate.swift */,
+				479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */,
+				479B7FCA25FF7286005AA267 /* Assets.xcassets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		47DCDE5D261AAF5400802F93 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */,
+				47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		47DCDE5E261AAF5A00802F93 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				479B7FC525FF7284005AA267 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		47DCDE5F261AAF5F00802F93 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		47DCDE60261AAF6500802F93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9DD387A68029934DA6855D8F /* Pods */ = {
@@ -150,9 +193,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DCDE64261AB05800802F93 /* Maplestory OTF Light.otf in Resources */,
+				47DCDE63261AB05800802F93 /* Maplestory OTF Bold.otf in Resources */,
 				479B7FCE25FF7286005AA267 /* LaunchScreen.storyboard in Resources */,
 				479B7FCB25FF7286005AA267 /* Assets.xcassets in Resources */,
-				479B7FC925FF7284005AA267 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				479B7FC625FF7284005AA267 /* ViewController.swift in Sources */,
+				479B7FC625FF7284005AA267 /* LoginViewController.swift in Sources */,
 				479B7FC225FF7284005AA267 /* AppDelegate.swift in Sources */,
 				479B7FC425FF7284005AA267 /* SceneDelegate.swift in Sources */,
 			);
@@ -214,14 +258,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		479B7FC725FF7284005AA267 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				479B7FC825FF7284005AA267 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

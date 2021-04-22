@@ -10,9 +10,7 @@ target 'Dolbomi' do
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'Alamofire'
-pod 'SnapKit'
 pod 'Kingfisher'
 pod 'Moya'
-
-
+pod 'SnapKit'
 end
