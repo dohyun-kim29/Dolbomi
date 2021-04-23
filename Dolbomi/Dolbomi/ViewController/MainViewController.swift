@@ -20,6 +20,22 @@ class MainViewController: UIViewController {
         return mainLabel
     }()
     
+    let homeCCTitleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "홈 CCTV 보기"
+        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
+        return titleLabel
+    }()
+    
+    let homeCCSubtitleLabel: UILabel = {
+        let subtitleLabel = UILabel()
+        subtitleLabel.text = "반려동물이 무얼 하는지 볼 수 있어요"
+        subtitleLabel.font = UIFont(name: "Maplestory OTF Light", size: 17)
+        subtitleLabel.textColor = UIColor(named: "DolbomiLabelColor")
+        return subtitleLabel
+    }()
+    
     let stackView: UIView = {
         let stackView = UIView()
         stackView.backgroundColor = .white
@@ -38,6 +54,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         makeConst()
+        
     }
     
     func makeUI() {
