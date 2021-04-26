@@ -17,7 +17,7 @@ class HomeCCViewController: UIViewController {
         let webView = WKWebView()
         webView.snp.makeConstraints {
             $0.width.equalTo(300)
-            $0.height.equalTo(300)
+            $0.height.equalTo(400)
         }
         return webView
     }()
@@ -30,6 +30,14 @@ class HomeCCViewController: UIViewController {
             $0.height.equalTo(20)
         }
         return backButton
+    }()
+    
+    let titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "홈 CCTV"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+        return titleLabel
     }()
     
     override func viewDidLoad() {
@@ -46,16 +54,25 @@ class HomeCCViewController: UIViewController {
         view.backgroundColor = UIColor(named: "DolbomiMainColor")
         view.addSubview(webView)
         view.addSubview(backButton)
+        view.addSubview(titleLabel)
         homeCCWebViewExtension()
     }
     
     func makeConst() {
-        webView.snp.makeConstraints {
-            $0.center.equalToSuperview()
-        }
+
         backButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(40)
             $0.leading.equalToSuperview().offset(30)
+        }
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(backButton).offset(40)
+            $0.leading.equalToSuperview().offset(30)
+        }
+        webView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel).offset(70)
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-40)
+            $0.bottom.equalToSuperview().offset(-40)
         }
     }
     
