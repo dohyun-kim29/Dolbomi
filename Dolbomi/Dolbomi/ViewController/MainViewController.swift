@@ -96,6 +96,44 @@ class MainViewController: UIViewController {
         return stackButton
     }()
     
+    
+    let settingTitleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "설정"
+        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 25)
+        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
+        return titleLabel
+    }()
+    
+    let settingSubTitleLabel: UILabel = {
+        let subtitleLabel = UILabel()
+        subtitleLabel.text = "Dolbomi 설정입니다"
+        subtitleLabel.font = UIFont(name: "Maplestory OTF Light", size: 15)
+        subtitleLabel.textColor = UIColor(named: "DolbomiLabelColor")
+        return subtitleLabel
+    }()
+    
+    let settingStackView: UIView = {
+        let stackView = UIView()
+        stackView.backgroundColor = .white
+        stackView.layer.cornerRadius = 20
+        stackView.snp.makeConstraints {
+            $0.height.equalTo(100)
+        }
+        return stackView
+    }()
+    
+    let settingStackButton: UIButton = {
+        let stackButton = UIButton()
+        stackButton.tintColor = .clear
+        stackButton.backgroundColor = .clear
+        stackButton.layer.cornerRadius = 20
+        stackButton.snp.makeConstraints {
+            $0.height.equalTo(100)
+        }
+        return stackButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeUI()
@@ -109,14 +147,21 @@ class MainViewController: UIViewController {
     func makeUI() {
         view.backgroundColor = UIColor(named: "DolbomiMainColor")
         view.addSubview(mainLabel)
+        
         view.addSubview(homeCCStackView)
         view.addSubview(homeCCTitleLabel)
         view.addSubview(homeCCSubtitleLabel)
         view.addSubview(homeCCStackButton)
+        
         view.addSubview(autoFeedStackView)
         view.addSubview(autoFeedTitleLabel)
         view.addSubview(autoFeedSubTitleLabel)
         view.addSubview(autoFeedStackButton)
+        
+        view.addSubview(settingStackView)
+        view.addSubview(settingTitleLabel)
+        view.addSubview(settingSubTitleLabel)
+        view.addSubview(settingStackButton)
     }
     
     func makeConst() {
@@ -161,6 +206,25 @@ class MainViewController: UIViewController {
         autoFeedStackButton.snp.makeConstraints {
             $0.center.equalTo(autoFeedStackView)
             $0.width.equalTo(autoFeedStackView)
+        }
+        
+        
+        settingStackView.snp.makeConstraints {
+            $0.top.equalTo(autoFeedSubTitleLabel).offset(90)
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-40)
+        }
+        settingTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(settingStackView).offset(20)
+            $0.leading.equalTo(settingStackView).offset(30)
+        }
+        settingSubTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(settingTitleLabel).offset(40)
+            $0.leading.equalTo(settingStackView).offset(30)
+        }
+        settingStackButton.snp.makeConstraints {
+            $0.center.equalTo(settingStackView)
+            $0.width.equalTo(settingStackView)
         }
     }
     
