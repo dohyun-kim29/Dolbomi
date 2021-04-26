@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Maplestory OTF Bold.oft</string>
+		<string>Maplestory OTF Bold.otf</string>
 		<string>Maplestory OTF Light.otf</string>
 	</array>
 	<key>CFBundleDisplayName</key>
