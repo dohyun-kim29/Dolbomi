@@ -12,6 +12,7 @@
 		479B7FC625FF7284005AA267 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479B7FC525FF7284005AA267 /* LoginViewController.swift */; };
 		479B7FCB25FF7286005AA267 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FCA25FF7286005AA267 /* Assets.xcassets */; };
 		479B7FCE25FF7286005AA267 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479B7FCC25FF7286005AA267 /* LaunchScreen.storyboard */; };
+		47C3E5CE2631012200222A19 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3E5CD2631012200222A19 /* MainViewController.swift */; };
 		47DCDE63261AB05800802F93 /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */; };
 		47DCDE64261AB05800802F93 /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */; };
 		9AE4EE204FC01F94079673E4 /* Pods_Dolbomi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A700DBDBE6E0A218B1E871D /* Pods_Dolbomi.framework */; };
@@ -26,6 +27,7 @@
 		479B7FCA25FF7286005AA267 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		479B7FCD25FF7286005AA267 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		479B7FCF25FF7286005AA267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47C3E5CD2631012200222A19 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Bold.otf"; sourceTree = "<group>"; };
 		47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Light.otf"; sourceTree = "<group>"; };
 		6CE2E09965340D5A0322C0A0 /* Pods-Dolbomi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dolbomi.debug.xcconfig"; path = "Target Support Files/Pods-Dolbomi/Pods-Dolbomi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				479B7FC525FF7284005AA267 /* LoginViewController.swift */,
+				47C3E5CD2631012200222A19 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				479B7FC625FF7284005AA267 /* LoginViewController.swift in Sources */,
 				479B7FC225FF7284005AA267 /* AppDelegate.swift in Sources */,
 				479B7FC425FF7284005AA267 /* SceneDelegate.swift in Sources */,
+				47C3E5CE2631012200222A19 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
