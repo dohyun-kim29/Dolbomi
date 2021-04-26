@@ -103,6 +103,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         makeConst()
+        
     }
     
     func makeUI() {
