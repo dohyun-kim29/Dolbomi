@@ -13,4 +13,6 @@ pod 'Alamofire'
 pod 'Kingfisher'
 pod 'Moya'
 pod 'SnapKit'
+pod 'RxViewController'
+
 end
