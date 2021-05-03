@@ -88,36 +88,50 @@ class AutoFeedViewController: UIViewController {
         return stackButton
     }()
     
-    let autoFeedButton6: UIButton = {
-        let button = UIButton()
-        button.setTitle("6", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
+//    let autoFeedButton6: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("6", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
+//
+//    let autoFeedButton12: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("12", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
+//
+//    let autoFeedButton24: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("24", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
+//
+//    let autoFeedButton48: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("48", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
     
-    let autoFeedButton12: UIButton = {
-        let button = UIButton()
-        button.setTitle("12", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
-    
-    let autoFeedButton24: UIButton = {
-        let button = UIButton()
-        button.setTitle("24", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
-    
-    let autoFeedButton48: UIButton = {
-        let button = UIButton()
-        button.setTitle("48", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
+    let confirmButton: UIButton = {
+        let confirmButton = UIButton()
+        confirmButton.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
+        confirmButton.setTitle("완료", for: .normal)
+        confirmButton.setTitleColor(.white, for: .normal)
+        confirmButton.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 17)
+        confirmButton.layer.cornerRadius = 13
+        confirmButton.snp.makeConstraints {
+            $0.width.equalTo(200)
+            $0.height.equalTo(40)
+        }
+        return confirmButton
     }()
     
     override func viewDidLoad() {
@@ -143,6 +157,8 @@ class AutoFeedViewController: UIViewController {
         view.addSubview(feedAmountStackView)
         view.addSubview(feedAmountTitleLabel)
         view.addSubview(feedAmountButton)
+        
+        view.addSubview(confirmButton)
     }
     
     func makeConst() {
@@ -181,6 +197,11 @@ class AutoFeedViewController: UIViewController {
         feedAmountButton.snp.makeConstraints {
             $0.center.equalTo(feedAmountStackView)
             $0.width.equalTo(feedAmountStackView)
+        }
+        confirmButton.snp.makeConstraints {
+            $0.top.equalTo(feedAmountButton).offset(150)
+            $0.trailing.equalToSuperview().offset(-85)
+            $0.leading.equalToSuperview().offset(85)
         }
         
         
