@@ -88,37 +88,37 @@ class AutoFeedViewController: UIViewController {
         return stackButton
     }()
     
-    let autoFeedButton6: UIButton = {
-        let button = UIButton()
-        button.setTitle("6", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
-    
-    let autoFeedButton12: UIButton = {
-        let button = UIButton()
-        button.setTitle("12", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
-    
-    let autoFeedButton24: UIButton = {
-        let button = UIButton()
-        button.setTitle("24", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
-    
-    let autoFeedButton48: UIButton = {
-        let button = UIButton()
-        button.setTitle("48", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        
-        return button
-    }()
+//    let autoFeedButton6: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("6", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
+//
+//    let autoFeedButton12: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("12", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
+//
+//    let autoFeedButton24: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("24", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
+//
+//    let autoFeedButton48: UIButton = {
+//        let button = UIButton()
+//        button.setTitle("48", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+//
+//        return button
+//    }()
     
     let confirmButton: UIButton = {
         let confirmButton = UIButton()
