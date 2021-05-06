@@ -53,6 +53,7 @@ class DevIntroduceViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         collectionView.setCollectionViewLayout(layout, animated: false)
+        collectionView.register(DevIntroduceCollectionViewCell.self, forCellWithReuseIdentifier: "DevIntroduceCollectionViewCell")
         return collectionView
     }()
     
