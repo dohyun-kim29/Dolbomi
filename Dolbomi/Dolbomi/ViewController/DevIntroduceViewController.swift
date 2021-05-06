@@ -12,6 +12,9 @@ import SnapKit
 
 class DevIntroduceViewController: UIViewController {
     
+    let viewModel = DevIntroduceViewModel()
+    let disposeBag = DisposeBag()
+    
     let backButton: UIButton = {
         let backButton = UIButton()
         backButton.setImage(UIImage(named: "arrow"), for: .normal)
@@ -98,8 +101,19 @@ class DevIntroduceViewController: UIViewController {
         
     }
     
+}
+
+extension DevIntroduceViewController {
+    
     func uiBind() {
-        
+        viewModel.output.devIntroduceData.asObservable()
+            .bind(to: devCollectionView.rx.items(cellIdentifier: "DevIntroduceCollectionViewCell")) {_, dev, cell in
+                if let cellToUse = cell as? DevIntroduceCollectionViewCell {
+                    cellToUse.devImageView.image = UIImage(named: dev.image)
+                    cellToUse.devName.text = dev.name
+                    cellToUse.devPart.text = dev.part
+                }
+            }.disposed(by: disposeBag)
     }
     
 }

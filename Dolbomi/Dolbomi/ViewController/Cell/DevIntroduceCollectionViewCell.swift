@@ -70,4 +70,5 @@ class DevIntroduceCollectionViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().offset(-10)
         }
     }
+    
 }
