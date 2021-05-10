@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47D67F5F2648C362007F0EDE /* bleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D67F5E2648C362007F0EDE /* bleTableViewController.swift */; };
 		47DCDD9E261162A600802F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DCDD9D261162A600802F93 /* AppDelegate.swift */; };
 		47DCDDA0261162A600802F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DCDD9F261162A600802F93 /* SceneDelegate.swift */; };
 		47DCDDA2261162A600802F93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DCDDA1261162A600802F93 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47D67F5E2648C362007F0EDE /* bleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bleTableViewController.swift; sourceTree = "<group>"; };
 		47DCDD9A261162A600802F93 /* DolbomiBluetooth_Testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DolbomiBluetooth_Testing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DCDD9D261162A600802F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47DCDD9F261162A600802F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				47DCDD9F261162A600802F93 /* SceneDelegate.swift */,
 				47DCDDA1261162A600802F93 /* ViewController.swift */,
 				47DCDDA3261162A600802F93 /* Main.storyboard */,
+				47D67F5E2648C362007F0EDE /* bleTableViewController.swift */,
 				47DCDDA6261162A700802F93 /* Assets.xcassets */,
 				47DCDDA8261162A700802F93 /* LaunchScreen.storyboard */,
 				47DCDDAB261162A700802F93 /* Info.plist */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47DCDDA2261162A600802F93 /* ViewController.swift in Sources */,
+				47D67F5F2648C362007F0EDE /* bleTableViewController.swift in Sources */,
 				47DCDD9E261162A600802F93 /* AppDelegate.swift in Sources */,
 				47DCDDA0261162A600802F93 /* SceneDelegate.swift in Sources */,
 			);

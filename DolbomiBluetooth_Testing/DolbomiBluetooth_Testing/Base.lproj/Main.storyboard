@@ -48,6 +48,30 @@
                                     <action selector="printCP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2W0-4x-E8P"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF9-Uo-bfN">
+                                <rect key="frame" x="162" y="642" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="PrintServices"/>
+                                <connections>
+                                    <action selector="printService:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3V-zT-cBc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHA-je-7Ws">
+                                <rect key="frame" x="180" y="693" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="printCH"/>
+                                <connections>
+                                    <action selector="printCH:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ib-kw-0t7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-cy-fi3">
+                                <rect key="frame" x="178" y="737" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="printDes"/>
+                                <connections>
+                                    <action selector="printDes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HIl-j4-lsz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,6 +80,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122" y="94"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9NG-EP-DlD">
+            <objects>
+                <viewController id="y0X-7p-ky9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m0I-3Z-8DB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RaL-NT-pwR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKY-Vn-N4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="835" y="94"/>
         </scene>
     </scenes>
     <resources>
