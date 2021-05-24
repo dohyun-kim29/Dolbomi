@@ -9,53 +9,46 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import Then
 
 class DevIntroduceViewController: UIViewController {
     
     let viewModel = DevIntroduceViewModel()
     let disposeBag = DisposeBag()
     
-    let backButton: UIButton = {
-        let backButton = UIButton()
-        backButton.setImage(UIImage(named: "arrow"), for: .normal)
-        backButton.snp.makeConstraints {
+    let backButton = UIButton().then {
+        $0.setImage(UIImage(named: "arrow"), for: .normal)
+        $0.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(20)
         }
-        return backButton
-    }()
+    }
     
-    let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "개발자 소개"
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
-        return titleLabel
-    }()
+    let titleLabel = UILabel().then {
+        $0.text = "개발자 소개"
+        $0.textColor = .white
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+    }
     
-    let subtitleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "(Team 랜선집사)"
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
-        return titleLabel
-    }()
+    let subtitleLabel = UILabel().then {
+        $0.text = "(Team 랜선집사)"
+        $0.textColor = .white
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+    }
     
     
-    let devCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-        collectionView.isPagingEnabled = true
-        collectionView.backgroundColor = .white
+    let devCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init()).then {
+        $0.isPagingEnabled = true
+        $0.backgroundColor = .white
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         let size:CGSize = UIScreen.main.bounds.size
         layout.itemSize = CGSize(width: size.width, height: 200)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
-        collectionView.setCollectionViewLayout(layout, animated: false)
-        collectionView.register(DevIntroduceCollectionViewCell.self, forCellWithReuseIdentifier: "DevIntroduceCollectionViewCell")
-        return collectionView
-    }()
+        $0.setCollectionViewLayout(layout, animated: false)
+        $0.register(DevIntroduceCollectionViewCell.self, forCellWithReuseIdentifier: "DevIntroduceCollectionViewCell")
+    }
     
     
     
