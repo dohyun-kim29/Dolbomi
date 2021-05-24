@@ -21,6 +21,8 @@
 		47D02BBE2640F364006A2F8E /* DevIntroduceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D02BBD2640F364006A2F8E /* DevIntroduceModel.swift */; };
 		47D02C50264380FF006A2F8E /* DevIntroduceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D02C4F264380FF006A2F8E /* DevIntroduceViewModel.swift */; };
 		47D632E1265B343F0080F4B8 /* DolbomiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D632E0265B343F0080F4B8 /* DolbomiAPI.swift */; };
+		47D632F1265B35760080F4B8 /* DolbomiAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D632F0265B35760080F4B8 /* DolbomiAPIClient.swift */; };
+		47D632F8265B36140080F4B8 /* ErrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D632F7265B36140080F4B8 /* ErrCode.swift */; };
 		47DCDE63261AB05800802F93 /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */; };
 		47DCDE64261AB05800802F93 /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */; };
 		47EC5C9B263F8D3100B3F985 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EC5C9A263F8D3100B3F985 /* SettingViewController.swift */; };
@@ -45,6 +47,8 @@
 		47D02BBD2640F364006A2F8E /* DevIntroduceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevIntroduceModel.swift; sourceTree = "<group>"; };
 		47D02C4F264380FF006A2F8E /* DevIntroduceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevIntroduceViewModel.swift; sourceTree = "<group>"; };
 		47D632E0265B343F0080F4B8 /* DolbomiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolbomiAPI.swift; sourceTree = "<group>"; };
+		47D632F0265B35760080F4B8 /* DolbomiAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DolbomiAPIClient.swift; sourceTree = "<group>"; };
+		47D632F7265B36140080F4B8 /* ErrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrCode.swift; sourceTree = "<group>"; };
 		47DCDE61261AB05800802F93 /* Maplestory OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Bold.otf"; sourceTree = "<group>"; };
 		47DCDE62261AB05800802F93 /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Light.otf"; sourceTree = "<group>"; };
 		47EC5C9A263F8D3100B3F985 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				47D632E0265B343F0080F4B8 /* DolbomiAPI.swift */,
+				47D632F0265B35760080F4B8 /* DolbomiAPIClient.swift */,
+				47D632F7265B36140080F4B8 /* ErrCode.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -305,8 +311,10 @@
 				47BE05142640C355005A8055 /* DevIntroduceViewController.swift in Sources */,
 				47D02C50264380FF006A2F8E /* DevIntroduceViewModel.swift in Sources */,
 				47C3E5CE2631012200222A19 /* MainViewController.swift in Sources */,
+				47D632F1265B35760080F4B8 /* DolbomiAPIClient.swift in Sources */,
 				47D02BBE2640F364006A2F8E /* DevIntroduceModel.swift in Sources */,
 				47EC5C9B263F8D3100B3F985 /* SettingViewController.swift in Sources */,
+				47D632F8265B36140080F4B8 /* ErrCode.swift in Sources */,
 				47C3E5FA2636A85B00222A19 /* HomeCCViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
