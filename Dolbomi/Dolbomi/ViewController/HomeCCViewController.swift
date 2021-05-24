@@ -10,35 +10,30 @@ import RxSwift
 import RxCocoa
 import SnapKit
 import WebKit
+import Then
 
 class HomeCCViewController: UIViewController {
     
-    let webView: WKWebView = {
-        let webView = WKWebView()
-        webView.snp.makeConstraints {
+    let webView = WKWebView().then {
+        $0.snp.makeConstraints {
             $0.width.equalTo(300)
             $0.height.equalTo(400)
         }
-        return webView
-    }()
+    }
     
-    let backButton: UIButton = {
-        let backButton = UIButton()
-        backButton.setImage(UIImage(named: "arrow"), for: .normal)
-        backButton.snp.makeConstraints {
+    let backButton = UIButton().then {
+        $0.setImage(UIImage(named: "arrow"), for: .normal)
+        $0.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(20)
         }
-        return backButton
-    }()
+    }
     
-    let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "홈 CCTV"
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
-        return titleLabel
-    }()
+    let titleLabel = UILabel().then {
+        $0.text = "홈 CCTV"
+        $0.textColor = .white
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
