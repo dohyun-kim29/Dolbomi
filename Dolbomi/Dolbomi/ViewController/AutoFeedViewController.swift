@@ -9,84 +9,69 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import Then
 
 class AutoFeedViewController: UIViewController {
     
-    let backButton: UIButton = {
-        let backButton = UIButton()
-        backButton.setImage(UIImage(named: "arrow"), for: .normal)
-        backButton.snp.makeConstraints {
+    let backButton = UIButton().then {
+        $0.setImage(UIImage(named: "arrow"), for: .normal)
+        $0.snp.makeConstraints {
             $0.width.equalTo(30)
             $0.height.equalTo(20)
         }
-        return backButton
-    }()
+    }
     
-    let titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "자동 배식"
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
-        return titleLabel
-    }()
+    let titleLabel = UILabel().then {
+        $0.text = "자동 배식"
+        $0.textColor = .white
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+    }
     
-    let autoFeedStackView: UIView = {
-        let stackView = UIView()
-        stackView.backgroundColor = .white
-        stackView.layer.cornerRadius = 20
-        stackView.snp.makeConstraints {
+    let autoFeedStackView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackView
-    }()
+    }
     
-    let autoFeedTitleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "몇 시간마다 배식을 할까요?"
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 22)
-        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return titleLabel
-    }()
+    let autoFeedTitleLabel = UILabel().then {
+        $0.text = "몇 시간마다 배식을 할까요?"
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 22)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let autoFeedButton: UIButton = {
-        let stackButton = UIButton()
-        stackButton.tintColor = .clear
-        stackButton.backgroundColor = .clear
-        stackButton.layer.cornerRadius = 20
-        stackButton.snp.makeConstraints {
+    let autoFeedButton = UIButton().then {
+        $0.tintColor = .clear
+        $0.backgroundColor = .clear
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackButton
-    }()
+    }
     
-    let feedAmountStackView: UIView = {
-        let stackView = UIView()
-        stackView.backgroundColor = .white
-        stackView.layer.cornerRadius = 20
-        stackView.snp.makeConstraints {
+    let feedAmountStackView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackView
-    }()
+    }
     
-    let feedAmountTitleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "어느정도 양을 배식할까요?"
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return titleLabel
-    }()
+    let feedAmountTitleLabel = UILabel().then {
+        $0.text = "어느정도 양을 배식할까요?"
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let feedAmountButton: UIButton = {
-        let stackButton = UIButton()
-        stackButton.tintColor = .clear
-        stackButton.backgroundColor = .clear
-        stackButton.layer.cornerRadius = 20
-        stackButton.snp.makeConstraints {
+    let feedAmountButton = UIButton().then {
+        $0.tintColor = .clear
+        $0.backgroundColor = .clear
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackButton
-    }()
+    }
     
 //    let autoFeedButton6: UIButton = {
 //        let button = UIButton()
@@ -120,19 +105,17 @@ class AutoFeedViewController: UIViewController {
 //        return button
 //    }()
     
-    let confirmButton: UIButton = {
-        let confirmButton = UIButton()
-        confirmButton.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
-        confirmButton.setTitle("완료", for: .normal)
-        confirmButton.setTitleColor(.white, for: .normal)
-        confirmButton.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 17)
-        confirmButton.layer.cornerRadius = 13
-        confirmButton.snp.makeConstraints {
+    let confirmButton = UIButton().then {
+        $0.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
+        $0.setTitle("완료", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 17)
+        $0.layer.cornerRadius = 13
+        $0.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(40)
         }
-        return confirmButton
-    }()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
