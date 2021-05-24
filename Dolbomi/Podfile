@@ -15,5 +15,6 @@ pod 'Moya'
 pod 'SnapKit'
 pod 'RxViewController'
 pod 'Then'
+pod 'RxAlamofire'
 
 end
