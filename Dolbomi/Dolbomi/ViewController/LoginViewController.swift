@@ -9,47 +9,45 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import Then
 
 class LoginViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    let loginLogo: UIImageView = {
-        let loginLogo = UIImageView()
-        loginLogo.image = UIImage(named: "DolbomiLogin")
-        loginLogo.snp.makeConstraints { con in
-            con.width.height.equalTo(200)
+    let loginLogo = UIImageView().then {
+        $0.image = UIImage(named: "DolbomiLogin")
+        $0.snp.makeConstraints {
+            $0.width.height.equalTo(200)
         }
-        return loginLogo
-    }()
+    }
     
-    let numTextField: UITextField = {
-        let numTextField = UITextField()
-        numTextField.layer.cornerRadius = 20
-        numTextField.placeholder = "기기번호를 입력해주세요"
-        numTextField.font = UIFont(name: "Maplestory OTF Bold", size: 17)
-        numTextField.backgroundColor = .white
-        numTextField.textAlignment = .center
-        numTextField.snp.makeConstraints {
+    let numTextField = UITextField().then {
+        $0.layer.cornerRadius = 20
+        $0.placeholder = "기기번호를 입력해주세요"
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 17)
+        $0.backgroundColor = .white
+        $0.textAlignment = .center
+        $0.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(40)
         }
-        return numTextField
-    }()
+        
+    }
     
-    let confirmButton: UIButton = {
+    let confirmButton =  UIButton().then {
         let confirmButton = UIButton()
-        confirmButton.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
-        confirmButton.setTitle("다음", for: .normal)
-        confirmButton.setTitleColor(.white, for: .normal)
-        confirmButton.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 17)
-        confirmButton.layer.cornerRadius = 13
-        confirmButton.snp.makeConstraints {
+        $0.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
+        $0.setTitle("다음", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 17)
+        $0.layer.cornerRadius = 13
+        $0.snp.makeConstraints {
             $0.width.equalTo(200)
             $0.height.equalTo(40)
         }
-        return confirmButton
-    }()
+        
+    }
     
     
     

@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func connectButton(_ sender: Any) {
         var connectPeripheral: CBPeripheral?
         for i in discoverPeripherals {
-            if i.name == "Buds Pro" {
+            if i.name == "민영곤쥬님의 AirPods" {
                 connectPeripheral = i
             }
         }
@@ -45,7 +45,26 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func printCP(_ sender: Any) {
-        print(connectedPeripherals)
+        print(connectedPeripherals!)
+
+    }
+    @IBAction func printService(_ sender: Any) {
+        
+        discoverService(peripheral: connectedPeripherals!)
+        print(connectedPeripherals?.services ?? "값이 없어요")
+        
+        
+    }
+    @IBAction func printCH(_ sender: Any) {
+        discoverCharacteristics(peripheral: connectedPeripherals!)
+//        for i in 0..<(connectedPeripherals?.services!.count)! {
+//
+//        }
+        print(connectedPeripherals?.services![0].characteristics ?? "값이 없어요")
+    }
+    @IBAction func printDes(_ sender: Any) {
+        discoverDescriptors(peripheral: connectedPeripherals!, characteristic: (connectedPeripherals?.services![0].characteristics![0])!)
+        print(connectedPeripherals?.services![0].characteristics![0].descriptors ?? "값이 없어요")
     }
     
     func startScan() {
