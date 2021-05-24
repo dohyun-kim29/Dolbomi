@@ -9,130 +9,105 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import Then
 
 class MainViewController: UIViewController {
     
-    let mainLabel: UILabel = {
-        let mainLabel = UILabel()
-        mainLabel.text = "MAIN"
-        mainLabel.textColor = .white
-        mainLabel.font = UIFont(name: "Maplestory OTF Bold", size: 40)
-        return mainLabel
-    }()
+    let mainLabel = UILabel().then {
+        $0.text = "MAIN"
+        $0.textColor = .white
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 40)
+    }
     
-    let homeCCTitleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "홈 CCTV 보기"
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 25)
-        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return titleLabel
-    }()
+    let homeCCTitleLabel = UILabel().then {
+        $0.text = "홈 CCTV 보기"
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 25)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let homeCCSubtitleLabel: UILabel = {
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = "반려동물이 무얼 하는지 볼 수 있어요"
-        subtitleLabel.font = UIFont(name: "Maplestory OTF Light", size: 15)
-        subtitleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return subtitleLabel
-    }()
+    let homeCCSubtitleLabel =  UILabel().then {
+        $0.text = "반려동물이 무얼 하는지 볼 수 있어요"
+        $0.font = UIFont(name: "Maplestory OTF Light", size: 15)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let homeCCStackView: UIView = {
-        let stackView = UIView()
-        stackView.backgroundColor = .white
-        stackView.layer.cornerRadius = 20
-        stackView.snp.makeConstraints {
+    let homeCCStackView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackView
-    }()
+    }
     
-    let homeCCStackButton: UIButton = {
-        let stackButton = UIButton()
-        stackButton.tintColor = .clear
-        stackButton.backgroundColor = .clear
-        stackButton.layer.cornerRadius = 20
-        stackButton.snp.makeConstraints {
+    let homeCCStackButton = UIButton().then {
+        $0.tintColor = .clear
+        $0.backgroundColor = .clear
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackButton
-    }()
+    }
     
     
     
-    let autoFeedTitleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "자동 배식 설정"
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 25)
-        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return titleLabel
-    }()
+    let autoFeedTitleLabel = UILabel().then {
+        $0.text = "자동 배식 설정"
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 25)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let autoFeedSubTitleLabel: UILabel = {
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = "반려동물이 혼자 밥을 먹게 해주세요"
-        subtitleLabel.font = UIFont(name: "Maplestory OTF Light", size: 15)
-        subtitleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return subtitleLabel
-    }()
+    let autoFeedSubTitleLabel = UILabel().then {
+        $0.text = "반려동물이 혼자 밥을 먹게 해주세요"
+        $0.font = UIFont(name: "Maplestory OTF Light", size: 15)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let autoFeedStackView: UIView = {
-        let stackView = UIView()
-        stackView.backgroundColor = .white
-        stackView.layer.cornerRadius = 20
-        stackView.snp.makeConstraints {
+    let autoFeedStackView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackView
-    }()
+    }
     
-    let autoFeedStackButton: UIButton = {
-        let stackButton = UIButton()
-        stackButton.tintColor = .clear
-        stackButton.backgroundColor = .clear
-        stackButton.layer.cornerRadius = 20
-        stackButton.snp.makeConstraints {
+    let autoFeedStackButton = UIButton().then {
+        $0.tintColor = .clear
+        $0.backgroundColor = .clear
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackButton
-    }()
+    }
     
     
-    let settingTitleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.text = "설정"
-        titleLabel.font = UIFont(name: "Maplestory OTF Bold", size: 25)
-        titleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return titleLabel
-    }()
+    let settingTitleLabel = UILabel().then {
+        $0.text = "설정"
+        $0.font = UIFont(name: "Maplestory OTF Bold", size: 25)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let settingSubTitleLabel: UILabel = {
-        let subtitleLabel = UILabel()
-        subtitleLabel.text = "Dolbomi 설정입니다"
-        subtitleLabel.font = UIFont(name: "Maplestory OTF Light", size: 15)
-        subtitleLabel.textColor = UIColor(named: "DolbomiLabelColor")
-        return subtitleLabel
-    }()
+    let settingSubTitleLabel = UILabel().then {
+        $0.text = "Dolbomi 설정입니다"
+        $0.font = UIFont(name: "Maplestory OTF Light", size: 15)
+        $0.textColor = UIColor(named: "DolbomiLabelColor")
+    }
     
-    let settingStackView: UIView = {
-        let stackView = UIView()
-        stackView.backgroundColor = .white
-        stackView.layer.cornerRadius = 20
-        stackView.snp.makeConstraints {
+    let settingStackView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackView
-    }()
+    }
     
-    let settingStackButton: UIButton = {
-        let stackButton = UIButton()
-        stackButton.tintColor = .clear
-        stackButton.backgroundColor = .clear
-        stackButton.layer.cornerRadius = 20
-        stackButton.snp.makeConstraints {
+    let settingStackButton = UIButton().then {
+        $0.tintColor = .clear
+        $0.backgroundColor = .clear
+        $0.layer.cornerRadius = 20
+        $0.snp.makeConstraints {
             $0.height.equalTo(100)
         }
-        return stackButton
-    }()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

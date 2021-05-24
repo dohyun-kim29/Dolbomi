@@ -15,9 +15,11 @@ class DevIntroduceCollectionViewCell: UICollectionViewCell {
     let devImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.snp.makeConstraints {
-            $0.width.equalTo(40)
-            $0.height.equalTo(40)
+            $0.height.equalTo(230)
+            $0.width.equalTo(230)
         }
+        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        imageView.layer.cornerRadius = 50
         return imageView
     }()
     
@@ -39,6 +41,12 @@ class DevIntroduceCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         makeUI()
         makeConst()
+        
+        devImageView.layer.cornerRadius = devImageView.frame.height/2
+        devImageView.layer.borderWidth = 1
+        devImageView.layer.borderColor = UIColor.clear.cgColor
+        // 뷰의 경계에 맞춰준다
+        devImageView.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
