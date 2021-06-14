@@ -9,10 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import Alamofire
+import DLRadioButton
+import Toaster
 
 class FeedingViewController: UIViewController {
     
     let disposeBag = DisposeBag()
+    let toastMessage = Toast(text: "서버로 값이 전송되었어요", delay: Delay.short)
     
     let backButton = UIButton().then {
         $0.setImage(UIImage(named: "arrow"), for: .normal)
@@ -102,6 +106,36 @@ class FeedingViewController: UIViewController {
         }
     }
     
+    let feedAmount0Button = DLRadioButton().then {
+        $0.setTitle("소", for: .normal)
+        $0.setTitleColor(UIColor(named: "DolbomiDarkColor"), for: .normal)
+        $0.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        $0.snp.makeConstraints {
+            $0.width.equalTo(50)
+            
+        }
+    }
+    
+    let feedAmount1Button = DLRadioButton().then {
+        $0.setTitle("중", for: .normal)
+        $0.setTitleColor(UIColor(named: "DolbomiDarkColor"), for: .normal)
+        $0.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        $0.snp.makeConstraints {
+            $0.width.equalTo(50)
+            
+        }
+    }
+    
+    let feedAmount2Button = DLRadioButton().then {
+        $0.setTitle("대", for: .normal)
+        $0.setTitleColor(UIColor(named: "DolbomiDarkColor"), for: .normal)
+        $0.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        $0.snp.makeConstraints {
+            $0.width.equalTo(50)
+            
+        }
+    }
+    
     let confirmButton = UIButton().then {
         $0.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
         $0.setTitle("완료", for: .normal)
@@ -142,6 +176,11 @@ class FeedingViewController: UIViewController {
         view.addSubview(feedAmountStackView)
         view.addSubview(feedAmountTitleLabel)
         view.addSubview(feedAmountButton)
+        
+        view.addSubview(feedAmount0Button)
+        view.addSubview(feedAmount1Button)
+        view.addSubview(feedAmount2Button)
+
         
         view.addSubview(confirmButton)
     }
@@ -205,6 +244,21 @@ class FeedingViewController: UIViewController {
             $0.center.equalTo(feedAmountStackView)
             $0.width.equalTo(feedAmountStackView)
         }
+        
+        feedAmount0Button.snp.makeConstraints {
+            $0.top.equalTo(feedAmountTitleLabel).offset(35)
+            $0.leading.equalTo(feedAmountStackView).offset(20)
+        }
+        feedAmount1Button.snp.makeConstraints {
+            $0.top.equalTo(feedAmountTitleLabel).offset(35)
+            $0.leading.equalTo(feedAmount0Button).offset(100)
+        }
+        feedAmount2Button.snp.makeConstraints {
+            $0.top.equalTo(feedAmountTitleLabel).offset(35)
+            $0.leading.equalTo(feedAmount1Button).offset(100)
+        }
+        
+        
         confirmButton.snp.makeConstraints {
             $0.top.equalTo(feedAmountButton).offset(150)
             $0.trailing.equalToSuperview().offset(-85)
@@ -214,14 +268,46 @@ class FeedingViewController: UIViewController {
     }
     
     func bind() {
+        
+        feedAmount0Button.otherButtons.append(feedAmount1Button)
+        feedAmount0Button.otherButtons.append(feedAmount2Button)
+        
         backButton.rx.tap
             .bind {
                 self.backDismiss()
+            }.disposed(by: disposeBag)
+        
+        confirmButton.rx.tap
+            .bind {
+                self.networking()
+                print("@@@@@요청이 날라갔어요@@@@@")
+                self.toastMessage.show()
             }.disposed(by: disposeBag)
     }
     
     func backDismiss() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func networking() {
+        
+        var amount = 0
+        
+        
+        if feedAmount0Button.isSelected == true {
+            amount = 0
+        } else if feedAmount1Button.isSelected == true {
+            amount = 1
+        } else {
+            amount = 2
+        }
+        
+        
+        AF.request(UserDefaults.standard.string(forKey: "hostUrl")!+"/feed", method: .post, parameters: ["amount":"\(amount)"], encoding: URLEncoding.default, headers: ["Content-Type":"application/json"])
+                    .validate(statusCode: 200..<300)
+                    .responseJSON { (response) in
+                        print(response.result)
+                }
     }
     
 }

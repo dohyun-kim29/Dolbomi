@@ -12,10 +12,12 @@ import SnapKit
 import Then
 import DLRadioButton
 import Alamofire
+import Toaster
 
 class AutoFeedViewController: UIViewController {
     
     let disposebag = DisposeBag()
+    let toastMessage = Toast(text: "서버로 값이 전송되었어요", delay: Delay.short)
     
     let backButton = UIButton().then {
         $0.setImage(UIImage(named: "arrow"), for: .normal)
@@ -307,7 +309,7 @@ class AutoFeedViewController: UIViewController {
             .bind {
                 self.networking()
                 print("@@@@@요청이 날라갔어요@@@@@")
-                self.backDismiss()
+                self.toastMessage.show()
             }.disposed(by: disposebag)
     }
     
@@ -316,7 +318,7 @@ class AutoFeedViewController: UIViewController {
     }
     
     func networking() {
-        var interval = 0
+        var interval = 4
         var amount = 0
         
         if autofeed4Button.isSelected == true {
