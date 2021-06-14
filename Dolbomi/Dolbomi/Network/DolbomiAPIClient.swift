@@ -16,7 +16,7 @@ class DolbomiAPIClient {
     func networking<T: Codable>(from api: DolbomiAPI) -> Observable<T> {
         Observable.create { (obs) -> Disposable in
             if NetworkReachabilityManager()!.isReachable {
-                let provider = MoyaProvider<DolbomiAPI>()
+//                let provider = MoyaProvider<DolbomiAPI>()
                 
             } else {
                 obs.onError(ErrCode.internalServerError)

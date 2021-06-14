@@ -16,5 +16,6 @@ pod 'SnapKit'
 pod 'RxViewController'
 pod 'Then'
 pod 'RxAlamofire'
+pod 'Pure'
 
 end

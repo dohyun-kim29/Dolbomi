@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     
     let numTextField = UITextField().then {
         $0.layer.cornerRadius = 20
-        $0.placeholder = "기기번호를 입력해주세요"
+        $0.placeholder = "호스트 URL을 입력해주세요"
         $0.font = UIFont(name: "Maplestory OTF Bold", size: 17)
         $0.backgroundColor = .white
         $0.textAlignment = .center
