@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    let numTextField = UITextField().then {
+    let urlTextField = UITextField().then {
         $0.layer.cornerRadius = 20
         $0.placeholder = "호스트 URL을 입력해주세요"
         $0.font = UIFont(name: "Maplestory OTF Bold", size: 17)
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
     func makeUI() {
         view.backgroundColor = UIColor(named: "DolbomiMainColor")
         view.addSubview(loginLogo)
-        view.addSubview(numTextField)
+        view.addSubview(urlTextField)
         view.addSubview(confirmButton)
     }
     
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController {
             $0.leading.equalToSuperview().offset(85)
             
         }
-        numTextField.snp.makeConstraints {
+        urlTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(300)
             $0.trailing.equalToSuperview().offset(-85)
             $0.leading.equalToSuperview().offset(85)
