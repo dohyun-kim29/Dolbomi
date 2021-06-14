@@ -11,3 +11,4 @@ ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
+${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework

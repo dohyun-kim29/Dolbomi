@@ -25,6 +25,7 @@ PODS:
     - RxSwift (~> 6.0)
   - SnapKit (5.0.1)
   - Then (2.7.0)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - RxViewController
   - SnapKit
   - Then
+  - Toaster
 
 SPEC REPOS:
   trunk:
@@ -53,6 +55,7 @@ SPEC REPOS:
     - RxViewController
     - SnapKit
     - Then
+    - Toaster
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -67,7 +70,8 @@ SPEC CHECKSUMS:
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: 069cb14fe55d210e6663f1a0d1fd0da9cac5b1ed
+PODFILE CHECKSUM: 47b909162768ee8c0e3be5bee87a5f21fbf5f70c
 
 COCOAPODS: 1.10.1
