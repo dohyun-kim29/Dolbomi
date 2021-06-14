@@ -14,6 +14,8 @@ import Then
 
 class HomeCCViewController: UIViewController {
     
+    let disposeBag = DisposeBag()
+    
     let webView = WKWebView().then {
         $0.snp.makeConstraints {
             $0.width.equalTo(300)
@@ -43,6 +45,7 @@ class HomeCCViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         makeConst()
+        bind()
     }
     
     func makeUI() {
@@ -71,6 +74,17 @@ class HomeCCViewController: UIViewController {
         }
     }
     
+    func bind() {
+        backButton.rx.tap
+            .bind {
+                self.backDismiss()
+            }.disposed(by: disposeBag)
+    }
+    
+    func backDismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 
@@ -79,7 +93,7 @@ extension HomeCCViewController: WKUIDelegate, WKNavigationDelegate {
     func homeCCWebViewExtension() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        webView.load(URLRequest(url: URL(string: "https://op.gg")!))
+        webView.load(URLRequest(url: URL(string: UserDefaults.standard.string(forKey: "hostUrl")!+"/rtsp")!))
     }
     
 }

@@ -13,6 +13,8 @@ import Then
 
 class AutoFeedViewController: UIViewController {
     
+    let disposebag = DisposeBag()
+    
     let backButton = UIButton().then {
         $0.setImage(UIImage(named: "arrow"), for: .normal)
         $0.snp.makeConstraints {
@@ -125,6 +127,7 @@ class AutoFeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         makeConst()
+        bind()
     }
     
     func makeUI() {
@@ -188,6 +191,16 @@ class AutoFeedViewController: UIViewController {
         }
         
         
+    }
+    func bind() {
+        backButton.rx.tap
+            .bind {
+                self.backDismiss()
+            }.disposed(by: disposebag)
+    }
+    
+    func backDismiss() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

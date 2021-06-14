@@ -13,20 +13,20 @@ final class LoginViewModel {
     
     let disposeBag = DisposeBag()
     
-    
     struct Input {
-        let urlTextFieldSubject: Driver<String>
-        let confirmButtonSignal: Signal<Bool>
+        let urlTextFieldDriver: Driver<String>
+        let confirmButtonSignal: Signal<Void>
     }
     
     struct Output {
         
     }
     
-    func transform(_ input: Input) {
+    
+    func login(_ input: Input) {
         input.confirmButtonSignal.asObservable()
             .subscribe(onNext: { _ in
-                UserDefaults.standard.setValue(input.urlTextFieldSubject, forKey: "hostUrl")
+                UserDefaults.standard.setValue(input.urlTextFieldDriver, forKey: "hostUrl")
             }).disposed(by: disposeBag)
     }
     

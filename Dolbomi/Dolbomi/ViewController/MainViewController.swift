@@ -13,6 +13,8 @@ import Then
 
 class MainViewController: UIViewController {
     
+    let disposeBag = DisposeBag()
+    
     let mainLabel = UILabel().then {
         $0.text = "MAIN"
         $0.textColor = .white
@@ -81,13 +83,13 @@ class MainViewController: UIViewController {
     
     
     let settingTitleLabel = UILabel().then {
-        $0.text = "설정"
+        $0.text = "실시간 급여"
         $0.font = UIFont(name: "Maplestory OTF Bold", size: 25)
         $0.textColor = UIColor(named: "DolbomiLabelColor")
     }
     
     let settingSubTitleLabel = UILabel().then {
-        $0.text = "Dolbomi 설정입니다"
+        $0.text = "실시간으로 먹이를 급여합니다"
         $0.font = UIFont(name: "Maplestory OTF Light", size: 15)
         $0.textColor = UIColor(named: "DolbomiLabelColor")
     }
@@ -116,6 +118,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         makeConst()
+        bind()
         
     }
     
@@ -201,6 +204,41 @@ class MainViewController: UIViewController {
             $0.center.equalTo(settingStackView)
             $0.width.equalTo(settingStackView)
         }
+    }
+    
+    func bind() {
+        homeCCStackButton.rx.tap
+            .bind {
+                self.homeCCPresenting()
+            }.disposed(by: disposeBag)
+        
+        autoFeedStackButton.rx.tap
+            .bind {
+                self.AutoFeedPresenting()
+            }.disposed(by: disposeBag)
+        
+        settingStackButton.rx.tap
+            .bind {
+                self.FeedingPresenting()
+            }.disposed(by: disposeBag)
+    }
+    
+    func homeCCPresenting() {
+        let vc = HomeCCViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func AutoFeedPresenting() {
+        let vc = AutoFeedViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func FeedingPresenting() {
+        let vc = FeedingViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     
