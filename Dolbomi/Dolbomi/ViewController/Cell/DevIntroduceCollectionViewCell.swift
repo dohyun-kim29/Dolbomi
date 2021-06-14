@@ -9,26 +9,23 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import Then
 
 class DevIntroduceCollectionViewCell: UICollectionViewCell {
     
-    let devImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.snp.makeConstraints {
+    let devImageView = UIImageView().then {
+        $0.snp.makeConstraints {
             $0.height.equalTo(230)
             $0.width.equalTo(230)
         }
-        imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        imageView.layer.cornerRadius = 50
-        return imageView
-    }()
+        $0.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        $0.layer.cornerRadius = 50
+    }
     
-    let devName: UILabel = {
-        let devName = UILabel()
-        devName.text = "홈 CCTV"
-        devName.textColor = .label
-        return devName
-    }()
+    let devName = UILabel().then {
+        $0.text = "홈 CCTV"
+        $0.textColor = .label
+    }
     
     let devPart: UILabel = {
         let devPart = UILabel()

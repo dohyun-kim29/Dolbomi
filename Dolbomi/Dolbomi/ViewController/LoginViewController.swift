@@ -22,9 +22,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    let numTextField = UITextField().then {
+    let urlTextField = UITextField().then {
         $0.layer.cornerRadius = 20
-        $0.placeholder = "기기번호를 입력해주세요"
+        $0.placeholder = "호스트 URL을 입력해주세요"
         $0.font = UIFont(name: "Maplestory OTF Bold", size: 17)
         $0.backgroundColor = .white
         $0.textAlignment = .center
@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
     }
     
     let confirmButton =  UIButton().then {
-        let confirmButton = UIButton()
         $0.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
         $0.setTitle("다음", for: .normal)
         $0.setTitleColor(.white, for: .normal)
@@ -49,25 +48,39 @@ class LoginViewController: UIViewController {
         
     }
     
+    let mainPageButton = UIButton().then {
+        $0.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
+        $0.setTitle("메인 페이지로", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 17)
+        $0.layer.cornerRadius = 13
+        $0.snp.makeConstraints {
+            $0.width.equalTo(200)
+            $0.height.equalTo(40)
+        }
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         makeUI()
-        
+        bind()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         makeConst()
+
     }
     
     func makeUI() {
         view.backgroundColor = UIColor(named: "DolbomiMainColor")
         view.addSubview(loginLogo)
-        view.addSubview(numTextField)
+        view.addSubview(urlTextField)
         view.addSubview(confirmButton)
+        view.addSubview(mainPageButton)
     }
     
     func makeConst() {
@@ -77,7 +90,7 @@ class LoginViewController: UIViewController {
             $0.leading.equalToSuperview().offset(85)
             
         }
-        numTextField.snp.makeConstraints {
+        urlTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(300)
             $0.trailing.equalToSuperview().offset(-85)
             $0.leading.equalToSuperview().offset(85)
@@ -87,14 +100,44 @@ class LoginViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-85)
             $0.leading.equalToSuperview().offset(85)
         }
+        mainPageButton.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(400)
+            $0.trailing.equalToSuperview().offset(-85)
+            $0.leading.equalToSuperview().offset(85)
+        }
         
         
         
         
     }
     
+    func bind() {
+        self.confirmButton.rx.tap
+            .bind {
+                UserDefaults.standard.setValue(self.urlTextField.text, forKey: "hostUrl")
+            }.disposed(by: disposeBag)
+        
+        self.mainPageButton.rx.tap
+            .bind {
+                self.mainpage()
+            }.disposed(by: disposeBag)
+    }
+    
+    func mainpage() {
+        let vc = MainViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
     
     
+    
+}
+
+extension LoginViewController {
+//    func bind() {
+//        let input = LoginViewModel.Input(urlTextFieldDriver: urlTextField.rx.text.orEmpty.asDriver(), confirmButtonSignal: confirmButton.rx.tap.asSignal())
+//        viewModel.login(input)
+//    }
 }
 
 
