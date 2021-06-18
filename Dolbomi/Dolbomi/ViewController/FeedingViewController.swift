@@ -303,7 +303,7 @@ class FeedingViewController: UIViewController {
         }
         
         
-        AF.request(UserDefaults.standard.string(forKey: "hostUrl")!+"/feed", method: .post, parameters: ["amount":"\(amount)"], encoding: URLEncoding.default, headers: ["Content-Type":"application/json"])
+        AF.request("http://"+UserDefaults.standard.string(forKey: "hostUrl")!+"/feed", method: .post, parameters: ["amount":amount], encoding: JSONEncoding.default, headers: ["Content-Type":"application/json"])
                     .validate(statusCode: 200..<300)
                     .responseJSON { (response) in
                         print(response.result)

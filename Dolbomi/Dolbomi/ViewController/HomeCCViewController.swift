@@ -19,7 +19,7 @@ class HomeCCViewController: UIViewController {
     let webView = WKWebView().then {
         $0.snp.makeConstraints {
             $0.width.equalTo(300)
-            $0.height.equalTo(400)
+            $0.height.equalTo(200)
         }
     }
     
@@ -67,10 +67,10 @@ class HomeCCViewController: UIViewController {
             $0.leading.equalToSuperview().offset(30)
         }
         webView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel).offset(70)
+            $0.top.equalTo(titleLabel).offset(250)
             $0.leading.equalToSuperview().offset(40)
             $0.trailing.equalToSuperview().offset(-40)
-            $0.bottom.equalToSuperview().offset(-40)
+//            $0.bottom.equalToSuperview().offset(-40)
         }
     }
     
@@ -93,7 +93,7 @@ extension HomeCCViewController: WKUIDelegate, WKNavigationDelegate {
     func homeCCWebViewExtension() {
         webView.uiDelegate = self
         webView.navigationDelegate = self
-        webView.load(URLRequest(url: URL(string: UserDefaults.standard.string(forKey: "hostUrl")!+"/rtsp")!))
+        webView.load(URLRequest(url: URL(string: "http://"+UserDefaults.standard.string(forKey: "hostUrl")!+"/rtsp")!))
     }
     
 }

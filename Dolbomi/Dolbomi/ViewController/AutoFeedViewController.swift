@@ -140,37 +140,37 @@ class AutoFeedViewController: UIViewController {
     }
     
     
-//    let autoFeedButton6: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("6", for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-//
-//        return button
-//    }()
-//
-//    let autoFeedButton12: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("12", for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-//
-//        return button
-//    }()
-//
-//    let autoFeedButton24: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("24", for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-//
-//        return button
-//    }()
-//
-//    let autoFeedButton48: UIButton = {
-//        let button = UIButton()
-//        button.setTitle("48", for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
-//
-//        return button
-//    }()
+    //    let autoFeedButton6: UIButton = {
+    //        let button = UIButton()
+    //        button.setTitle("6", for: .normal)
+    //        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+    //
+    //        return button
+    //    }()
+    //
+    //    let autoFeedButton12: UIButton = {
+    //        let button = UIButton()
+    //        button.setTitle("12", for: .normal)
+    //        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+    //
+    //        return button
+    //    }()
+    //
+    //    let autoFeedButton24: UIButton = {
+    //        let button = UIButton()
+    //        button.setTitle("24", for: .normal)
+    //        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+    //
+    //        return button
+    //    }()
+    //
+    //    let autoFeedButton48: UIButton = {
+    //        let button = UIButton()
+    //        button.setTitle("48", for: .normal)
+    //        button.titleLabel?.font = UIFont(name: "Maplestory OTF Bold", size: 23)
+    //
+    //        return button
+    //    }()
     
     let confirmButton = UIButton().then {
         $0.backgroundColor = UIColor.init(named: "DolbomiDarkColor")
@@ -216,7 +216,7 @@ class AutoFeedViewController: UIViewController {
         view.addSubview(feedAmount0Button)
         view.addSubview(feedAmount1Button)
         view.addSubview(feedAmount2Button)
-
+        
         
         
         view.addSubview(confirmButton)
@@ -337,13 +337,45 @@ class AutoFeedViewController: UIViewController {
             amount = 2
         }
         
+        print(interval)
+        print(amount)
         
-        AF.request(UserDefaults.standard.string(forKey: "hostUrl")!+"/ser_feed_info", method: .post, parameters: ["interval":"\(interval)", "amount":"\(amount)"], encoding: URLEncoding.default, headers: ["Content-Type":"application/json"])
-                    .validate(statusCode: 200..<300)
-                    .responseJSON { (response) in
-                        print(response.result)
-                }
-    }
+        let url = URL(string: ("http://"+UserDefaults.standard.string(forKey: "hostUrl")!+"/set_feed_info"))
+//        var request = URLRequest(url: url!)
+//        let param = "[interval:\(interval), amount:\(amount)]"
+//        let paramData = param.data(using: .utf8)
+//        request.httpBody = paramData
+//        request.httpMethod = "POST"
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue(String(paramData!.count), forHTTPHeaderField: "Content-Length")
+//
+//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+//
+//
+//            if let e = error {
+//                NSLog("An error has occured: \(e.localizedDescription)")
+//                return
+//            }
+//
+//            // 응답 처리 로직
+//            DispatchQueue.main.async() {
+//                // 서버로부터 응답된 스트링 표시
+//                let outputStr = String(data: data!, encoding: String.Encoding.utf8)
+//                print("result: \(outputStr!)")
+//            }
+//
+//        }
+//        // POST 전송
+//        task.resume()
+//    }
+    
+            AF.request("http://"+UserDefaults.standard.string(forKey: "hostUrl")!+"/set_feed_info", method: .post, parameters: ["interval":interval, "amount":amount], encoding: JSONEncoding.default, headers: ["Content-Type":"application/json"])
+                        .validate(statusCode: 200..<300)
+                        .responseJSON { (response) in
+                            print(response.result)
+                    }
+        }
     
     
 }
+
